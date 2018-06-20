@@ -258,15 +258,18 @@ and applications:
 </UL></FONT></FONT></P>
 <H2 CLASS="western"><A NAME="__RefHeading__2.5_contents"></A>2.5 Design and Implementation Constraints</H2>
 <P><FONT FACE="times new roman"><FONT SIZE=2 STYLE="font-size: 11pt">
-<I>&lt;Describe any items or issues that will limit the options 
-available to the developers. These might include: corporate or 
-regulatory policies; hardware limitations (timing requirements, 
-memory requirements); interfaces to other applications; specific 
-technologies, tools, and databases to be used; parallel operations; 
-language requirements; communications protocols; security considerations; 
-design conventions or programming standards (for example, if the 
-customer&#8217;s organization will be responsible for maintaining the 
-delivered software).&gt;</I></FONT></FONT></P>
+<OL>
+<LI>Internet connection is a necessity for the application to run,
+since it will be using Google Maps to fetch activity data.</LI>
+<LI>Availability of Google Maps to be used legally for the
+application is required.</LI>
+<LI>Database is required from both user and admin ends, and thus
+needs to give concurrent and fast access to data, especially since
+the activity tracking will get more extensive as more users engage
+with the app.</LI>
+<LI>GPS built in smart phones must provide decent accuracy for
+distance tracking after an activity is selected.</LI>
+</OL></FONT></FONT></P>
 <H2 CLASS="western"><A NAME="__RefHeading__2.6_contents"></A>2.6 User Documentation</H2>
 <P><FONT FACE="times new roman"><FONT SIZE=2 STYLE="font-size: 11pt">
 <I>List the user documentation components (such as user manuals, 
