@@ -345,47 +345,43 @@ distance tracking after an activity is selected.</LI>
 <H2 CLASS="western"><A NAME="__RefHeading__3.1_contents">
 3.1 User Interfaces</H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
-<I>&lt;Describe the logical characteristics of each interface between the 
-software product and the users. This may include sample screen images, any 
-GUI standards or product family style guides that are to be followed,
-screen layout constraints, standard buttons and functions (e.g.,
-help) that will appear on every screen, keyboard shortcuts, error
-message display standards, and so on. Define the software components
-for which a user interface is needed. Details of the user interface
-design should be documented in a separate user interface
-specification.&gt;</I></FONT></FONT></P>
+A sample user interface is provided as follows:</FONT></FONT></P>
+<BR></BR><IMG SRC=https://imgur.com/Dm1Jm7A.png><BR></BR>
+<P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
+The user will be directed to the location page after starting 
+the app, where they can select an area or confirm the automatically 
+detected area.  They will then be forwarded to the activity page, 
+where a list of activities  will show up as cards. This will be 
+similar to the cards page as shown in  the sample interface, when 
+they can scroll or shuffle through the list of  activities. Once 
+they selecte an activity, they will be directed to the cards  page, 
+which will provide details of places that offer those activities. 
+They  can then choose to select a card, with the selection being 
+saved, and then  prompted for getting directions to the place.</FONT></FONT></P>
 <H2 CLASS="western"><A NAME="__RefHeading__3.2_contents">
 3.2 Hardware Interfaces</H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
-<I>&lt;Describe the logical and physical characteristics of each interface 
-between the software product and the hardware components of the system. 
-This may include the supported device types, the nature of the data and
-control interactions between the software and the hardware, and
-communication protocols to be used.&gt;</I></FONT></FONT></P>
+The application does not have any direct hardware interfaces 
+due to the lack of having any designated hardware other than 
+android smart phones, which come built in with the capabilities 
+to supply GPS data.</FONT></FONT></P>
 <H2 CLASS="western"><A NAME="__RefHeading__3.3_contents">
 3.3 Software Interfaces</H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
-<I>&lt;Describe the connections between this product and other specific 
-software components (name and version), including databases, operating
-systems, tools, libraries, and integrated commercial components.
-Identify the data items or messages coming into the system and going
-out and describe the purpose of each. Describe the services needed
-and the nature of communications. Refer to documents that describe
-detailed application programming interface protocols. Identify data
-that will be shared across software components. If the data sharing
-mechanism must be implemented in a specific way (for example, use of
-a global data area in a multitasking operating system), specify this
-as an implementation constraint.&gt;</I></FONT></FONT></P>
+The application will be on Android, and will directly contact 
+the SQLite database used to store user data, which consists 
+primarily of login information and activity history of each user. 
+The application will also be directly communicating with Google 
+Maps for seleting location and detecting all places around that 
+location. The implementation will be limited to how much data 
+Google Maps provides on any place in the map.</FONT></FONT></P>
 <H2 CLASS="western"><A NAME="__RefHeading__3.4_contents">
 3.4 Communications Interfaces</H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
-<I>&lt;Describe the requirements associated with any communications 
-functions required by this product, including e-mail, web browser, 
-network server communications protocols, electronic forms, and so on. 
-Define any pertinent message formatting. Identify any communication
-standards that will be used, such as FTP or HTTP. Specify any
-communication security or encryption issues, data transfer rates, and
-synchronization mechanisms.&gt;</I></FONT></FONT></P>
+The application will use electronic forms to collect user login 
+information for storage. Other than that, the app will only consist 
+of selecting a location on the interface and scrolling or shuffling 
+through the choices.</FONT></FONT></P>
 <H1 CLASS="western"><A NAME="__RefHeading__4_contents"></A>
 4. System Features</H1>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
