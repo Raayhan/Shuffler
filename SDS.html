@@ -74,7 +74,7 @@
 	
     <P STYLE="margin-left: 0.25in; text-indent: -0.25in; margin-top: 0.05in; margin-bottom: 0in; line-height: 0.15in">
 	<B><A HREF="#__RefHeading__4_contents" STYLE="color: #666633; text-decoration: none">
-    4. Class Diagram(High Level)</A></B></P>
+    4. Class Diagram (High Level)</A></B></P>
 	
 	<P STYLE="margin-left: 0.25in; text-indent: -0.25in; margin-top: 0.05in; margin-bottom: 0in; line-height: 0.15in">
 	<B><A HREF="#__RefHeading__5_contents" STYLE="color: #666633; text-decoration: none">
@@ -111,114 +111,192 @@
 <H2><A NAME="__RefHeading__1.1_contents"></A>
 1.1 Purpose</H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
-The software design specification is made with the purpose of outlining the software architecture and design of the "Shuffler" in detail. The document will provide developers an insight in meeting client's needs efficiently and effectively. Morever the document facilitates communication and understanding of the software by providing several views of the system design. </></FONT></FONT></P>
-<H2>1.2 Scope<A NAME="__RefHeading__1.2_contents"></A></H2>
+The software design specification is made with the purpose of 
+outlining the software architecture and design of the "Shuffler" 
+in detail. The document will provide developers an insight in 
+meeting client's needs efficiently and effectively. Morever the 
+document facilitates communication and understanding of the 
+software by providing several views of the system design.</FONT></FONT></P>
+<H2><A NAME="__RefHeading__1.2_contents"></A>
+1.2 Scope</H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
-The software design document would demonstrate how the design will accomplish the functional and non-functional requirements captured in the Software Requirement Specification(SRS). The document will provide a framework to the programmers through describing the high level components and architecture,sub systems,interfaces,database design and algorithm design.This is achieved through the use of architectural patterns,design patterns,class diagrams,database design etc.</></FONT></FONT></P>
+The software design document would demonstrate how the design 
+will accomplish the functional and non-functional requirements 
+captured in the Software Requirement Specification(SRS). The 
+document will provide a framework to the programmers through 
+describing the high level components and architecture,sub 
+systems,interfaces,database design and algorithm design.This 
+is achieved through the use of architectural patterns,design 
+patterns,class diagrams,database design etc.</FONT></FONT></P>
 <H2><A NAME="__RefHeading__1.3_contents"></A>
 1.3 Intended Audience</H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
-This document is mainly for the developers so that they can get a detailed idea about how the software need to be developed.</></FONT></FONT></P>
+This document is mainly for the developers so that they can 
+get a detailed idea about how the software need to be developed.</FONT></FONT></P>
 <H2><A NAME="__RefHeading__1.4_contents"></A>
-1.4 Definitions, acronyms, and abbreviations</H2>
+1.4 Definitions, Acronyms, and Abbreviations</H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
-SRS – Software Requirements Specification, this document which outlines the requirements that the application must fulfill. Entirely design independent.<br><br>
-User – any person who uses the program.<br><br>
-History – a database that will save the user activity history as strings.<br><br>
-Home Page – the initial Home page serves user to register/login.<br><br>
-User Menu Page – the initial menu for users who have logged in.<br><br>
-SDS – Software Design Specification.<br><br>
-Registration Page – the page that allows the user to create new  acounts.<br><br>
-Login Page – the page that allows the user to login if they have a valid login.<br><br> 
-UML – Unified Modeling Language.<br><br>
-OS - Operating System.<br><br>
-Activites - A list of cards that will display activities in a specified area.<br>
-<h2><A NAME="__RefHeading__1.5_contents"></A>
-<H2>1.5 Document Overview</H2></h2>
+SRS - Software Requirements Specification, this document which 
+outlines the requirements that the application must fulfill. 
+Entirely design independent.<BR></BR>
+User - any person who uses the program.<BR></BR>
+History - a database that will save the user activity history 
+as strings.<BR></BR>
+Home Page - the initial Home page serves user to register/login.<BR></BR>
+User Menu Page - the initial menu for users who have logged in.<BR></BR>
+SDS - Software Design Specification.<BR></BR>
+Registration Page - the page that allows the user to create 
+new  acounts.<BR></BR>
+Login Page - the page that allows the user to login if they 
+have a valid login.<BR></BR> 
+UML - Unified Modeling Language.<BR></BR>
+OS - Operating System.<BR></BR>
+Activites - A list of cards that will display activities in 
+a specified area.<BR></BR>
+API - Application programming interface.</FONT></FONT></P>
+<H2><A NAME="__RefHeading__1.5_contents"></A>
+1.5 Document Overview</H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
-The next chapter of the document has described architectural design of "Shuffler". The high level component and their interactions,suitable architecture patterns,physical arrangement of components and design decisions applied in the whole system.And the chapters after that described component and detailed design,class diagrams,class details,database design and many more.</></FONT></FONT></P>
+The next chapter of the document describes architectural design 
+of "Shuffler". The high level component and their interactions, 
+suitable architecture patterns,physical arrangement of components 
+and design decisions applied in the whole system. The chapters after 
+that describes component and detailed design, class diagrams, class 
+details, database design and API listing and details.</FONT></FONT></P>
 
 <H1><A NAME="__RefHeading__2_contents"></A>
 2.  Architectural Design</H1>
 <H2><A NAME="__RefHeading__2.1_contents"></A>
 2.1 High Level Component and Their Interaction</H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
-<H4>User Component:</H5>
-This is one of the key component of "Shuffler". This is where the user's actions, area activities will be implemented. This is also includes user account informations.
+<H4>User Component:</H4>
+This is one of the key component of "Shuffler". This is where the 
+user's actions, area activities will be implemented. This is also 
+includes user account informations.
 <H4>Authentication and user management component:</H4>
-This is the major sub system that is responsible for the security of the "Shuffler" It authenticate users and also handles the user management activities such as creating new user account,removing acount etc.
+This is the major sub system that is responsible for the security 
+of the "Shuffler" It authenticate users and also handles the user 
+management activities such as creating new user account,removing 
+acount etc.
 <H4>History Component:</H4>
-Here the user's recent history will be implemented. One user will have one history. It will be synchronized with server when a user logged in with a new device and it will be saved in local server if a user logs in with the previous device it will sync data from local server.
+Here the user's recent history will be implemented. One user will 
+have one history. It will be synchronized with server when a user 
+logged in with a new device and it will be saved in local server if 
+a user logs in with the previous device it will sync data from 
+local server.
 <H4>Activity Component:</H4>
-In the activity component all activities of a speicified area will be saved into the database. User will be able to select a specific location and see the activities within that location.
-</></FONT></FONT></P>
+In the activity component all activities of a speicified area will 
+be saved into the database. User will be able to select a specific 
+location and see the activities within that location.</FONT></FONT></P>
 <H2>2.2 Architectural Styles/Patterns<A NAME="__RefHeading__2.2_contents"></A></H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
-The Suffler will be developed under MVC(Model-View-Controller) architectural styles/patterns.Users will be able to access the application with active internet connection within any area of the world.<br><br>
-<H4>MVC Architectural Style(Model-View-Controller)</H4>
-MVC Style separates presentation and interaction from the system data. The system is structured into
-three logical components that interact with each other.<br><br>
- The Model component -Manages the system data and associated operations on that data.<br>
- The View component- Defines and manages how the data is presented to the user.<br>
- The Controller component- Manages user interaction and passes these interactions to the View
-and the Model.<br><br><br>
-<img src="https://i.imgur.com/GAigbWw.jpg"> 
-</></FONT></FONT></P>
+The Shuffler will be developed under MVC (Model-View-Controller) 
+architectural styles/patterns.Users will be able to access the 
+application with active internet connection within any area of the 
+world.
+<H4>MVC Architectural Style (Model-View-Controller)</H4>
+MVC Style separates presentation and interaction from the system 
+data. The system is structured into three logical components that 
+interact with each other:
+<OL>
+<LI>The Model component -Manages the system data and associated 
+operations on that data.
+<LI>The View component- Defines and manages how the data is 
+presented to the user.</LI>
+<LI>The Controller component- Manages user interaction and passes 
+these interactions to the View and the Model.</LI>
+</OL>
+<IMG SRC="https://i.imgur.com/GAigbWw.jpg"> 
+</FONT></FONT></P>
 <H2><A NAME="__RefHeading__2.3_contents"></A>
 2.3 Physical Arrangements of Device and Communication</H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
-The Shuffler deals mainly with hardware devices and installed software components
-on devices. The System performs many tasks. It consists of navigation based system used by
-users. The system helps to record user’s name, date of birth, email,phone number,address etc.<br>
-Internet is the worldwide interconnection of all smart communication devices that have a valid IP.
-There should be active internet connection to use the application.<br><br>
-<img src="https://i.imgur.com/NvUBfhB.png" align="middle" width="620" height="442">
-</></FONT></FONT></P>
+The Shuffler deals mainly with hardware devices and installed 
+software components on devices. The System performs many tasks. 
+It consists of navigation based system used by users. The system 
+helps to record user’s name, date of birth, email, phone number, 
+address etc.<BR>
+Internet is the worldwide interconnection of all smart communication 
+devices that have a valid IP.
+There should be active internet connection to use the application.<BR></BR>
+<IMG SRC="https://i.imgur.com/NvUBfhB.png" align="middle" width="620" height="442">
+</FONT></FONT></P>
 <H2><A NAME="__RefHeading__2.4_contents"></A>
 2.4 Design Decisions Apllied in Whole Application</H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
 <H4>Object Oriented Software Development Methods</H4>
-Reasons:<br><br>
- Improved software maintainability.<br>
- Faster development<br>
- Lower cost development<br>
- Improved software development productivity<br>
- Higher quality software<br></></FONT></FONT></P>
+Reasons:
+<OL>
+<LI>Improved software maintainability.</LI>
+<LI>Faster development.</LI>
+<LI>Lower cost development.</LI>
+<LI>Improved software development productivity.</LI>
+<LI>Higher quality software.</LI>
+</OL></FONT></FONT></P>
 <H4>MVC Architectural Pattern</H4>
-Reasons:<br><br>
- It should interact with other machines or users effectively.<br>
- For more efficient interaction system should have flexible interfaces.<br>
- MVC can be taken as for a popular and easy to handle web application development
-style that has the feature of separating the presentation, Business & intermediate logics.<br>
- Ease to coding and provide well defined interfaces within each logic.<br>
+Reasons:
+<OL>
+<LI>It should interact with other machines or users effectively.</LI>
+<LI>For more efficient interaction system should have flexible 
+interfaces.</LI>
+<LI>MVC can be taken as for a popular and easy to handle web 
+application development style that has the feature of separating 
+the presentation, Business & intermediate logics.</LI>
+<LI>Ease to coding and provide well defined interfaces within 
+each logic.</LI>
+</OL></FONT></FONT></P>
 
 <H1><A NAME="__RefHeading__3_contents"></A>
 3. Component Design</H1>
-<p>
+<P>
 ----------
-</p>
+</P>
 
 <H1><A NAME="__RefHeading__4_contents"></A>
 4. Class Diagram(High Level)</H1>
-<p>              
+<P>              
 ----------
 </P>
 
 <H1><A NAME="__RefHeading__5_contents"></A>
 5. Class Description & Details</H1>
-<p>
+<P>
 ----------
-</p>
+</P>
 
 <H1><A NAME="__RefHeading__6_contents"></A>
 6. Database Design</H1>
-<p>
-----------
-</p>
+<H2><A NAME="__RefHeading__6.1_contents"></A>
+6.1 Design Objective</H2>
+<P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
+A well-designed database should:
+<UL STYLE="list-style-type:circle">
+<LI>Support both required and ad hoc information retrieval.</LI>
+<LI>Eliminate data redundancy, duplication and inconsistencies.</LI>
+<LI>Ensure data integrity and accuracy.</LI>
+<LI>Support business rules relevant to the organization.</LI>
+<LI>Lend itself to future growth and development.</LI>
+</UL></FONT></FONT></P>
+<H2><A NAME="__RefHeading__6.2_contents"></A>
+6.2 Table Organization</H2>
+<P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
+</FONT></FONT></P>
+<H2><A NAME="__RefHeading__6.3_contents"></A>
+6.3 Relationships</H2>
+<P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
+</FONT></FONT></P>
+<H2><A NAME="__RefHeading__6.4_contents"></A>
+6.4 Normalization</H2>
+<P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
+</FONT></FONT></P>
+<H2><A NAME="__RefHeading__6.5_contents"></A>
+6.5 Scope of Expansion</H2>
+<P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
+</FONT></FONT></P>
 
 <H1><A NAME="__RefHeading__7_contents"></A>
 7. API Listing & Details</H1>
-<p>
+<P>
 ----------
-</p>
+</P>
 </HTML>
