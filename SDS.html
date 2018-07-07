@@ -279,16 +279,32 @@ A well-designed database should:
 </UL></FONT></FONT></P>
 <H2><A NAME="__RefHeading__6.2_contents"></A>
 6.2 Table Organization</H2>
-<P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
-<IMG SRC="https://imgur.com/8k0DgGj.jpg"></FONT></FONT></P>
+<IMG SRC="https://imgur.com/ySqNGvi.jpg">
 <H2><A NAME="__RefHeading__6.3_contents"></A>
 6.3 Relationships</H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
-</FONT></FONT></P>
+<UL STYLE="list-style-type:circle">
+<LI><B>Users and History:</B> Each user can select multiple 
+activities to be saved in their history, and therefore the 
+UserID, which is the primary key for the Users table, is one 
+half of the composite foreign key for the History table, 
+making the Users table have a One-to-Many relationship with 
+the History table.</LI>
+<LI><B>Activities and History:</B> Each activity can be 
+selected by multiple users to be stored in their history, and 
+therefore the ActivityID, which is the primary key for the 
+Activities table, makes the other half of the composite foreign 
+key for the History table, making the Activities tables have a 
+One-to-Many relationship with the History table as well.</LI>
+</UL></FONT></FONT></P>
 <H2><A NAME="__RefHeading__6.4_contents"></A>
 6.4 Normalization</H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
-</FONT></FONT></P>
+All three tables in our database, <B>Users</B>, <B>History</B> 
+and <B>Activities</B> each have all their non-key columns fully 
+dependent on their primary key only, and the non-key columns 
+are also independent of each other. Hence, all the tables are 
+in Third Normal Form (3NF).</FONT></FONT></P>
 <H2><A NAME="__RefHeading__6.5_contents"></A>
 6.5 Scope of Expansion</H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
