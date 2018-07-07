@@ -120,7 +120,7 @@ software by providing several views of the system design.</FONT></FONT></P>
 <H2><A NAME="__RefHeading__1.2_contents"></A>
 1.2 Scope</H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
-The software design document would demonstrate how the design 
+The software design document is to demonstrate how the design 
 will accomplish the functional and non-functional requirements 
 captured in the Software Requirement Specification (SRS). The 
 document will provide a framework to the programmers through 
@@ -136,14 +136,14 @@ get a detailed idea about how the software need to be developed.</FONT></FONT></
 <H2><A NAME="__RefHeading__1.4_contents"></A>
 1.4 Definitions, Acronyms, and Abbreviations</H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
-SRS - Software Requirements Specification, this document which 
+App - Application.
+SRS - Software Requirements Specification; this document  
 outlines the requirements that the application must fulfill. 
 Entirely design independent.<BR></BR>
 User - any person who uses the program.<BR></BR>
-History - a database that will save the user activity history 
-as strings.<BR></BR>
+History - a database that will save the user activity history.<BR></BR>
 Home Page - the initial Home page serves user to register/login.<BR></BR>
-User Menu Page - the initial menu for users who have logged in.<BR></BR>
+User Menu - the menu for users who have logged in.<BR></BR>
 SDS - Software Design Specification.<BR></BR>
 Registration Page - the page that allows the user to create 
 new  acounts.<BR></BR>
@@ -158,8 +158,8 @@ API - Application programming interface.</FONT></FONT></P>
 1.5 Document Overview</H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
 The next chapter of the document describes architectural design 
-of "Shuffler". The high level component and their interactions, 
-suitable architecture patterns,physical arrangement of components 
+of "Shuffler", the high level components and their interactions, 
+suitable architecture patterns, physical arrangement of components 
 and design decisions applied in the whole system. The chapters after 
 that describes component and detailed design, class diagrams, class 
 details, database design and API listing and details.</FONT></FONT></P>
@@ -167,43 +167,41 @@ details, database design and API listing and details.</FONT></FONT></P>
 <H1><A NAME="__RefHeading__2_contents"></A>
 2.  Architectural Design</H1>
 <H2><A NAME="__RefHeading__2.1_contents"></A>
-2.1 High Level Component and Their Interaction</H2>
+2.1 High Level Components and Their Interactions</H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
 <H4>User Component:</H4>
-This is one of the key component of "Shuffler". This is where the 
+This is one of the key components of "Shuffler". This is where the 
 user's actions, area activities will be implemented. This is also 
-includes user account informations.
+includes user account information.
 <H4>Authentication and user management component:</H4>
 This is the major sub system that is responsible for the security 
-of the "Shuffler" It authenticate users and also handles the user 
-management activities such as creating new user account,removing 
-acount etc.
+of the app. It authenticates users and also handles the user 
+management activities such as creating new user accounts, removing 
+acounts and etc.
 <H4>History Component:</H4>
 Here the user's recent history will be implemented. One user will 
 have one history. It will be synchronized with server when a user 
-logged in with a new device and it will be saved in local server if 
-a user logs in with the previous device it will sync data from 
-local server.
+logged in with a new device.
 <H4>Activity Component:</H4>
-In the activity component all activities of a speicified area will 
+In the activity component, all activities of a specified area will 
 be saved into the database. User will be able to select a specific 
-location and see the activities within that location.</FONT></FONT></P>
+location and see the activities within an area around that location.</FONT></FONT></P>
 <H2>2.2 Architectural Styles/Patterns<A NAME="__RefHeading__2.2_contents"></A></H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
-The Shuffler will be developed under MVC (Model-View-Controller) 
-architectural styles/patterns.Users will be able to access the 
-application with active internet connection within any area of the 
-world.
+The app will be developed under MVC (Model-View-Controller) 
+architectural style/pattern. Users will be able to access the 
+application with active internet connection within any location 
+in the world.
 <H4>MVC Architectural Style (Model-View-Controller)</H4>
-MVC Style separates presentation and interaction from the system 
+MVC style separates presentation and interaction from the system 
 data. The system is structured into three logical components that 
 interact with each other:
 <OL>
-<LI>The Model component -Manages the system data and associated 
+<LI>The Model component - Manages the system data and associated 
 operations on that data.
-<LI>The View component- Defines and manages how the data is 
+<LI>The View component - Defines and manages how the data is 
 presented to the user.</LI>
-<LI>The Controller component- Manages user interaction and passes 
+<LI>The Controller component - Manages user interaction and passes 
 these interactions to the View and the Model.</LI>
 </OL>
 <IMG SRC="https://i.imgur.com/GAigbWw.jpg"> 
@@ -211,14 +209,14 @@ these interactions to the View and the Model.</LI>
 <H2><A NAME="__RefHeading__2.3_contents"></A>
 2.3 Physical Arrangements of Device and Communication</H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
-The Shuffler deals mainly with hardware devices and installed 
-software components on devices. The System performs many tasks. 
+The app deals mainly with hardware devices and installed 
+software components on devices. The system performs many tasks. 
 It consists of navigation based system used by users. The system 
-helps to record user’s name, date of birth, email, phone number, 
+helps to record user's name, date of birth, email, phone number, 
 address etc.<BR>
 Internet is the worldwide interconnection of all smart communication 
 devices that have a valid IP.
-There should be active internet connection to use the application.<BR></BR>
+An active internet connection in mandatory to use the application.</BR>
 <IMG SRC="https://i.imgur.com/NvUBfhB.png" align="middle" width="620" height="442">
 </FONT></FONT></P>
 <H2><A NAME="__RefHeading__2.4_contents"></A>
@@ -237,11 +235,11 @@ Reasons:
 Reasons:
 <OL>
 <LI>It should interact with other machines or users effectively.</LI>
-<LI>For more efficient interaction system should have flexible 
+<LI>For more efficient interaction, the system should have flexible 
 interfaces.</LI>
-<LI>MVC can be taken as for a popular and easy to handle web 
+<LI>MVC can be taken as a popular and easy to handle web 
 application development style that has the feature of separating 
-the presentation, Business & intermediate logics.</LI>
+the presentation, business & intermediate logics.</LI>
 <LI>Ease to coding and provide well defined interfaces within 
 each logic.</LI>
 </OL></FONT></FONT></P>
