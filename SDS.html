@@ -131,10 +131,26 @@ The next chapter of the document has described architectural design of "Shuffler
 <H2><A NAME="__RefHeading__2.1_contents"></A>
 2.1 High Level Component and Their Interaction</H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
-----------</></FONT></FONT></P>
+<H4>User Component:</H5>
+This is one of the key component of "Shuffler". This is where the user's actions, area activities will be implemented. This is also includes user account informations.
+<H4>Authentication and user management component:</H4>
+This is the major sub system that is resposible for the security of the "Shuffler" It autheticate users and also handles the user management activities such as creating new user account,removing acount etc.
+<H4>History Component:</H4>
+Here the user's recent history will be implemented. One user will have one history. It will be synchronized with server when a user logged in with a new device and it will be saved in local server if a user logs in with the previous device it will sync data from local server.
+
+</></FONT></FONT></P>
 <H2>2.2 Architectural Styles/Patterns<A NAME="__RefHeading__2.2_contents"></A></H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
-----------</></FONT></FONT></P>
+The Suffler will be developed under MVC(Model-View-Controller) architectural styles/patterns.Users will be able to access the application with active internet connection within any area of the world.<br><br>
+<H4>MVC Architectural Style(Model-View-Controller)</H4>
+MVC Style separates presentation and interaction from the system data. The system is structured into
+three logical components that interact with each other.<br>
+ The Model component -Manages the system data and associated operations on that data.<br>
+ The View component- Defines and manages how the data is presented to the user.<br>
+ The Controller component- Manages user interaction and passes these interactions to the View
+and the Model.<br><br><br>
+<img src="https://i.imgur.com/GAigbWw.jpg"> 
+</></FONT></FONT></P>
 <H2><A NAME="__RefHeading__2.3_contents"></A>
 2.3 Physical Arrangements of Device and Communication</H2>
 <P><FONT FACE="times new roman"><FONT STYLE="font-size: 11pt">
