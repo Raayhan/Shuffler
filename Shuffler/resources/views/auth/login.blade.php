@@ -9,7 +9,9 @@
                 <div align='center' class="card-header">{{ __('Login to Shuffler') }}</div>
                 
                 <div class="card-body">
-                   
+                    
+                    
+                    
                     <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
                         @csrf
 
@@ -72,6 +74,13 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                
+                                <a href="{{ url('/auth/facebook') }}" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
+                            </div>
+                        </div>
+
                     </form>
                 </div>
             </div>
