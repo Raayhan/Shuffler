@@ -14,13 +14,17 @@
 Route::get('/','PagesController@index'); 
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
+Route::get('/dashboard', 'DashboardController@dashboard');
+
+
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+Route::get('/auth/facebook', 'SocialAuthFacebookController@redirect');
+Route::get('/auth/facebook/callback', 'SocialAuthFacebookController@callback');
+Route::get('/redirect', 'SocialAuthGoogleController@redirect');
+Route::get('/callback', 'SocialAuthGoogleController@callback');
 
-Route::get('/dashboard', 'DashboardController@index');
-Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');
-Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+Route::get('/dashboard', 'MapController@index');

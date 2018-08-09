@@ -1,31 +1,19 @@
 @extends('layouts.app')
 @section('content')
-<body style="background-image:url('Background.png')">
-<!--Jumbotron-->
-
-
-
-<div class="row mb-5">
-  <div class="col-md-12">
-    <div style="background-image: url('SubBackground.png')">
-          <div class="text-white text-center rgba-stylish-strong py-5 px-4">
-              <div class="py-5">
-
-                  <!--Content-->
-                      <h6 class="orange-text font-bold"><i class="fa fa-camera-retro"></i> Wecome To</h6>
-                      <h1 class="card-title pt-3 mb-5 font-bold">Shuffler</h1>
-                     
-                      <p><a class="btn-danger btn-lg"href="/login"role="button">Login</a> <a class="btn-success btn-lg" href="/register" role="button">Register</a></p>
-                  <!--Content-->
-                  
-                   <p> please login or register to use the service</p>
-                  
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
-<!--Jumbotron-->
-
+<body style="background-image:url('Background.PNG'); background-repeat: no-repeat; background-size:cover">
+<br><br><br><br><br><br><br><br>
+    <div align='center'>
+    <div align='center' class="card text-white bg-dark mb-3" style="max-width: 25rem;">
+        <div class="card-header">Welcome To</div>
+        <div class="card-body">
+          <h1 class="card-title">Shuffler</h1>
+          <br>
+          <p><a class="btn-danger btn-lg"href="/login"role="button">Login</a> <a class="btn-success btn-lg" href="/register" role="button">Register</a></p>
+          <br><br>
+        
+        </div>
+        <h6 class="card-footer">Please Login or Register to use the services</h6>
+    </div>
+    </div>
 
 @endsection

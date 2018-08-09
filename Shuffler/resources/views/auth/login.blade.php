@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+<body style="background-image:url('Background.PNG')">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -61,12 +61,9 @@
                                     {{ __('Login') }}
                                 </button>
                                 
-                                <button type="submit" class="btn btn-primary">
-                                        {{ __('Login with Facebook') }}
-                                    </button>
-                                    <button type="submit" class="btn btn-danger">
-                                        {{ __('Login with Google') }}
-                                    </button>
+                                <a href="{{ url('/auth/facebook') }}" class="btn btn-primary"><i class="fa fa-facebook"></i> Login with Facebook</a>
+                                <a href="{{ url('/redirect') }}" class="btn btn-danger"><i class="fa fa-google"></i> Login with Google</a>    
+                              
                                 
 
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
@@ -77,7 +74,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 
-                                <a href="{{ url('/auth/facebook') }}" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
+                                
                             </div>
                         </div>
 

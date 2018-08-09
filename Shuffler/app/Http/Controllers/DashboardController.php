@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth;
+use Socialite;
 class DashboardController extends Controller
+
 {
     /**
      * Create a new controller instance.

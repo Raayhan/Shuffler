@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<body style="background-image:url('Background.PNG')">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div align='center' class="card-header">{{ __('Register to Suffler') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
@@ -68,14 +69,7 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                
-                                <a href="{{ url('/auth/facebook') }}" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
-                            </div>
-                        </div>
-
-                    </form>
+                       </form>
                 </div>
             </div>
         </div>
