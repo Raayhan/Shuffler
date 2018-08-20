@@ -161,6 +161,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Cornford\Googlmapper\MapperServiceProvider::class,
+        SKAgarwal\GoogleApi\ServiceProvider::class,
     ],
 
     /*
@@ -211,6 +212,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Mapper' => Cornford\Googlmapper\Facades\MapperFacade::class,
+        'GooglePlaces' => SKAgarwal\GoogleApi\Facade::class,
     ],
 
 ];

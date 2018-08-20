@@ -28,3 +28,4 @@ Route::get('/redirect', 'SocialAuthGoogleController@redirect');
 Route::get('/callback', 'SocialAuthGoogleController@callback');
 
 Route::get('/dashboard', 'MapController@index');
+Route::get('/places', 'PlacesController@index');

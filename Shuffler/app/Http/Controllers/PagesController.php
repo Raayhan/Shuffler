@@ -10,7 +10,6 @@ class PagesController extends Controller
        $title ='Welcome to Shuffler';
         return view('pages.index',compact('title'));
 
-
     }
 
     public function about(){
