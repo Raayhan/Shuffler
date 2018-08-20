@@ -27,5 +27,5 @@ Route::get('/auth/facebook/callback', 'SocialAuthFacebookController@callback');
 Route::get('/redirect', 'SocialAuthGoogleController@redirect');
 Route::get('/callback', 'SocialAuthGoogleController@callback');
 
-Route::get('/dashboard', 'MapController@index');
 Route::get('/places', 'PlacesController@index');
+Route::get('/dashboard', 'MapController@index')->middleware('authenticated');
