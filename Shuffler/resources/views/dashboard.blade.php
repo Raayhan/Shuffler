@@ -15,14 +15,13 @@
                         </div>
                     @endif
 
-                    <h1>Shuffler</h1> <br>
+                    <h1>Shuffler</h1>
                 </div>
             </div>
 
         </div>
         <div>
-        <br><br><br>
-        <div style="width: 1600px; height: 600px;">
+        <div style="width: 100vw; height: 75vh;">
             {!! Mapper::render() !!}
         </div>
     </div>
