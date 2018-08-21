@@ -15,9 +15,12 @@
               </ul>
 
               <ul class="navbar-nav">
+                    @guest
+                    @else
                       <li class="nav-item">
                       <a class="nav-link" href="/dashboard">Dashboard <span class="sr-only">(current)</span></a>
                       </li>
+                    @endguest
                       <li class="nav-item">
                       <a class="nav-link" href="/about">About</a>
                       </li>

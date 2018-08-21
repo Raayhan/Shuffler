@@ -18,14 +18,7 @@ class PagesController extends Controller
 		
 
     }
-	
-	public function aboutus(){
-        $title ='About Us';
-        return view('pages.aboutus',compact('title'));
 
-    }
-	
-    
     public function services(){
         $data=array(
             'title'=>'Services'
@@ -34,12 +27,5 @@ class PagesController extends Controller
         return view('pages.services')->with($data);
  
      }
-	 public function service(){
-        $data=array(
-            'title'=>'Services'
-            
-        );
-        return view('pages.service')->with($data);
-    }
 	 
 }

@@ -12,18 +12,10 @@
 */
 
 Route::get('/','PagesController@index'); 
-Route::get('/about', 'PagesController@about')->middleware('aboutus');
-Route::get('/services', 'PagesController@services')->middleware('service');
-Route::get('/dashboard', 'DashboardController@dashboard');
-Route::get('/aboutus', 'PagesController@aboutus');
-Route::get('/service', 'PagesController@service');
-
-
-
-
+Route::get('/about', 'PagesController@about');
+Route::get('/services', 'PagesController@services');
 
 Auth::routes();
-
 
 Route::get('/auth/facebook', 'SocialAuthFacebookController@redirect');
 Route::get('/auth/facebook/callback', 'SocialAuthFacebookController@callback');

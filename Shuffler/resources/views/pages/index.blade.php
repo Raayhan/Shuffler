@@ -1,4 +1,4 @@
-@extends('layouts.indexapp')
+@extends('layouts.app')
 @section('content')
 <body style="background-image:url('Background.PNG'); background-repeat: no-repeat; background-size:cover">
 <br><br><br><br><br><br><br><br>
