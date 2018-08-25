@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Socialite;
 use Auth;
+
 class SocialAuthGoogleController extends Controller
 {
     public function redirect()
