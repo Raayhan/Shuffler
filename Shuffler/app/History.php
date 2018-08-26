@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Place extends Model
+class History extends Model
 {
     // Table Name
-    protected $table = 'places';
+    protected $table = 'histories';
     // Primary Key
     public $primaryKey = 'id';
     // Timestamps

@@ -16,10 +16,11 @@ class CreatePlacesTable extends Migration
         Schema::create('places', function (Blueprint $table) {
             $table->increments('id');
             $table->string('place_id');
+            $table->string('coordinates');
             $table->string('name');
-            $table->string('lat');
-            $table->string('lng');
-            $table->string('type');
+            $table->string('vicinity');
+            $table->string('types');
+            $table->decimal('rating');
             $table->timestamps();
         });
     }
