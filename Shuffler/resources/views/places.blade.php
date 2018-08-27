@@ -8,18 +8,10 @@
         @foreach($places as $place)
             Place ID: {{$place['place_id']}}<br>
             Name: {{$place['name']}}<br>
-            Coordinates: {{$place['geometry']['location']['lat'].', '.$place['geometry']['location']['lng']}}<br>
+            Coordinates: {{$place['coordinates']}}<br>
             Vicinity: {{$place['vicinity']}}<br>
-            Type: 
-            @foreach($place['types'] as $type)
-                @if($type == 'point_of_interest') @continue @endif
-                {{$type}};
-            @endforeach<br>
-            @if(isset($place['rating']))
-                Rating: {{$place['rating']}}
-            @else
-                Rating: N/A
-            @endif<br>
+            Type: {{$place['types']}}<br>
+            Rating: {{$place['rating']}}<br>
             <br>
         @endforeach
     @else

@@ -16,12 +16,11 @@ class CreateHistoriesTable extends Migration
         Schema::create('histories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('location');
-            $table->decimal('radius')->nullable();
+            $table->decimal('radius');
             $table->string('type')->nullable();
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->unsignedInteger('result_id');
-            $table->foreign('result_id')->references('id')->on('places');
+            $table->string('place_id');
             $table->timestamps();
         });
     }
