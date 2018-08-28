@@ -61,12 +61,12 @@
                                     {{ __('Login') }}
                                 </button>
                                 
-                                <a href="{{ url('/auth/facebook') }}" class="btn btn-primary"><i class="fa fa-facebook"></i> Login with Facebook</a>
+                                
                                 <a href="{{ url('/redirect') }}" class="btn btn-danger"><i class="fa fa-google"></i> Login with Google</a>    
                               
                                 
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <a class="btn btn-info" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
                             </div>
