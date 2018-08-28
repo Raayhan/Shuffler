@@ -35,12 +35,10 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
-    'facebook' => [
-        'client_id'     => '2070060043314069',
-        'client_secret' => '1028dc472cb0630778efa800f4b04367',
-        'redirect'      => 'https://shuffler.com/auth/facebook/callback'],
+        
     'google' => [
-        'client_id' => '240977066691-8sttm3r48odiqljkrs0em9eq2d9s2aeh.apps.googleusercontent.com',
-        'client_secret' => '0ptyXyeGsnhwDrN35Mw_TbVX',
-        'redirect' => 'https://shuffler.com/callback'],
+         'client_id'     => env('GOOGLE_CLIENT_ID'),
+         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+         'redirect'      => env('GOOGLE_REDIRECT')
+    ],
 ];

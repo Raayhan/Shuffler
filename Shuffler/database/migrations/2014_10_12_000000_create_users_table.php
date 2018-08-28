@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('provider')->nullable();
             $table->string('provider_id')->nullable();
-            $table->string('google-id')->nullable();
+            $table->string('google_id')->nullable();
             $table->rememberToken()->nullable();
             $table->timestamps();
         });

@@ -17,10 +17,11 @@ Route::get('/services', 'PagesController@services');
 
 Auth::routes();
 
-Route::get('/auth/facebook', 'SocialAuthFacebookController@redirect');
-Route::get('/auth/facebook/callback', 'SocialAuthFacebookController@callback');
-Route::get('/redirect', 'SocialAuthGoogleController@redirect');
-Route::get('/callback', 'SocialAuthGoogleController@callback');
+
 
 Route::get('/places', 'PlacesController@index');
 Route::get('/dashboard', 'MapController@index')->middleware('authenticated');
+
+
+Route::get('/redirect', 'Auth\LoginController@redirectToProvider');
+Route::get('/callback', 'Auth\LoginController@handleProviderCallback');
