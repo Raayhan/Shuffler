@@ -10,6 +10,7 @@ use App\History;
 use DB;
 use Auth;
 use Socialite;
+use Location;
 
 class PlacesController extends Controller
 {
@@ -37,9 +38,11 @@ class PlacesController extends Controller
      * @param string[] $params
      * @return GooglePlaces
      */
-    public function index($location = '23.773902, 90.3847508', $radius = 1000, $type = 'restaurant')
+    public function index($location = '23.7374803, 90.3922557', $radius = 1000, $type = 'restaurant')
     {
         $title = 'Places';
+        $user_location = $this->getUserLocation();
+        $location = $user_location->latitude.', '.$user_location->longitude;
         $places;
         if($this->findHistory($location, $radius, $type)){
             $places = $this->getPlaces($location, $radius, $type);
@@ -50,7 +53,7 @@ class PlacesController extends Controller
             $this->storePlaces($places);
             $this->storeHistory($location, $radius, $type, $places);
         }
-        return view('places',compact('title'))->with('places', $places);
+        return view('places',compact([$title => 'title', $location => 'location']))->with('places', $places);
     }
 
     /**
@@ -62,15 +65,31 @@ class PlacesController extends Controller
      * @return GooglePlaces
      */
     public function searchPlaces($location, $radius, $type){
-        // sleep(30);
+        
         $params['type'] = $type;
         $places = GooglePlaces::nearbySearch($location, $radius, $params);
         $results = $places['results'];
         // if(empty($places['next_page_token']) === false) {
+        //     sleep(30);
         //     $params['pagetoken'] = $places['next_page_token'];
         //     return $results->merge($this->search($location, $radius, $params));
         // }
         return $results;
+    }
+
+    /**
+     * Get locaiton from user IP.
+     * 
+     * @return Location
+     */
+    public function getUserLocation(){
+        
+        $ipTracker = file_get_contents('http://checkip.dyndns.com/');
+        preg_match('/Current IP Address: \[?([:.0-9a-fA-F]+)\]?/', $ipTracker, $ipFinder);
+        $ip = $ipFinder[1];
+        // $ip = Request::getClientIp();
+        $location = Location::get($ip); // Replace with IP
+        return $location;
     }
 
     /**

@@ -6,7 +6,7 @@
                 {{ config('app.name', 'Shuffler') }}
             </a>
         @else
-            <a class="navbar-brand" href="{{ url('/dashboard') }}">
+            <a class="navbar-brand" href="{{ url('/places') }}">
                 {{ config('app.name', 'Shuffler') }}
             </a>
         @endguest
@@ -24,7 +24,7 @@
                 @guest
                 @else
                 <li class="nav-item">
-                <a class="nav-link" href="/dashboard">Dashboard <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/places">Places <span class="sr-only">(current)</span></a>
                 </li>
                 @endguest
                 <li class="nav-item">

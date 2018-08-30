@@ -156,12 +156,12 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Cornford\Googlmapper\MapperServiceProvider::class,
         SKAgarwal\GoogleApi\ServiceProvider::class,
+        Stevebauman\Location\LocationServiceProvider::class,
     ],
 
     /*
@@ -213,6 +213,7 @@ return [
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Mapper' => Cornford\Googlmapper\Facades\MapperFacade::class,
         'GooglePlaces' => SKAgarwal\GoogleApi\Facade::class,
+        'Location' => Stevebauman\Location\Facades\Location::class,
     ],
 
 ];
