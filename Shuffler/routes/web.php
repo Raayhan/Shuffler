@@ -22,7 +22,5 @@ Auth::routes();
 Route::get('/places', 'PlacesController@index')->middleware('authenticated');
 Route::get('/dashboard', 'MapController@index')->middleware('authenticated');
 
-Route::get('/location', 'LocationController@index');
-
 Route::get('/redirect', 'Auth\LoginController@redirectToProvider');
 Route::get('/callback', 'Auth\LoginController@handleProviderCallback');
