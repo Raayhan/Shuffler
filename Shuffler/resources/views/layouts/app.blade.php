@@ -19,11 +19,11 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body style="background-image:url('Background.PNG')">
     <div id="app">
         @include('inc.navbar')
         <div class="container">
-           
+           <br><br>
             @yield('content')
         </div>
        

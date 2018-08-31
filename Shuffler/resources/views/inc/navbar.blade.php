@@ -10,7 +10,7 @@ display: flex; justify-content:center;">
                 {{ config('app.name', 'Shuffler') }}
             </a>
         @else
-            <a class="navbar-brand" style="" href="{{ url('/places') }}">
+            <a class="navbar-brand" style="" href="{{ url('/search') }}">
                 {{ config('app.name', 'Shuffler') }}
             </a>
         @endguest

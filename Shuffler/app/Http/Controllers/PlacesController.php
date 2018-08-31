@@ -20,6 +20,11 @@ class PlacesController extends Controller
     // Airport Bus Stand: '23.851778,90.4050458'
     // 300 feet: '23.773902, 90.3847508'
 
+    private $location;
+    private $radius;
+    private $type;
+    private $title = 'Places';
+
     /**
      * Create a new controller instance.
      *
@@ -27,7 +32,80 @@ class PlacesController extends Controller
      */
     public function __construct()
     {
+        $this->location = $this->getUserLocation();
+        $this->radius = 500;
+        $this->type = '';
         $this->middleware('auth');
+    }
+
+    /**
+     * Set location.
+     *
+     * @param string $location
+     * @return void
+     */
+    public function setLocation($location){
+        $this->location = $location;
+    }
+
+    /**
+     * Set radius.
+     *
+     * @param string $radius
+     * @return void
+     */
+    public function setRadius($radius){
+        $this->radius = $radius;
+    }
+
+    /**
+     * Set type.
+     *
+     * @param string $type
+     * @return void
+     */
+    public function setType($type){
+        $this->type = $type;
+    }
+
+    /**
+     * Display options to choose from.
+     *
+     * @param string $type
+     * @return void
+     */
+    public function getSearchform(){
+        $title = $this->title;
+        $location = $this->location;
+        $radius = $this->radius;
+        $type = $this->type;
+        $availableTypes = $this->getAvailableTypes();
+        $availableRadii = $this->getAvailableRadii();
+        return view('search',compact([
+            $title => 'title', 
+            $location => 'location', 
+            $radius => 'radius', 
+            $type => 'type']))
+        ->with('availableTypes', $availableTypes)
+        ->with('availableRadii', $availableRadii);
+    }
+
+    /**
+     * Display options to choose from.
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function storeSearch(Request $request){
+        // $this->validate($request, [
+        //     'type' => 'required',
+        //     'radius' => 'required'
+        // ]);
+
+        $this->setType($request->input('selectedType'));
+        $this->setRadius($request->input('selectedRadius'));
+
+        return $this->getSearchform();
     }
 
     /**
@@ -38,11 +116,12 @@ class PlacesController extends Controller
      * @param string[] $params
      * @return GooglePlaces
      */
-    public function index($location = '23.7374803, 90.3922557', $radius = 1000, $type = 'bank')
+    public function index()
     {
-        $title = 'Places';
-        $user_location = $this->getUserLocation();
-        $location = $user_location->latitude.', '.$user_location->longitude;
+        $title = $this->title;
+        $location = $this->location;
+        $radius = $this->radius;
+        $type = $this->type;
         $availableTypes = $this->getAvailableTypes();
         $availableRadii = $this->getAvailableRadii();
         $places;
@@ -55,7 +134,7 @@ class PlacesController extends Controller
             $this->storePlaces($places);
             $this->storeHistory($location, $radius, $type, $places);
         }
-        return view('places',compact([$title => 'title', $location => 'location']))
+        return view('places',compact([$title => 'title', $location => 'location', $radius => 'radius', $type => 'type']))
         ->with('places', $places)
         ->with('availableTypes', $availableTypes)
         ->with('availableRadii', $availableRadii);
@@ -93,7 +172,8 @@ class PlacesController extends Controller
         preg_match('/Current IP Address: \[?([:.0-9a-fA-F]+)\]?/', $ipTracker, $ipFinder);
         $ip = $ipFinder[1];
         // $ip = Request::getClientIp();
-        $location = Location::get($ip); // Replace with IP
+        $user_location = Location::get($ip); // Replace with IP
+        $location = $user_location->latitude.', '.$user_location->longitude;
         return $location;
     }
 

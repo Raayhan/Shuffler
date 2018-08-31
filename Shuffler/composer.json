@@ -11,6 +11,7 @@
         "laravel/framework": "5.6.*",
         "laravel/socialite": "^3.0",
         "laravel/tinker": "^1.0",
+        "laravelcollective/html": "^5.6",
         "skagarwal/google-places-api": "^1.2",
         "stevebauman/location": "^3.0",
         "torann/geoip": "^1.0"

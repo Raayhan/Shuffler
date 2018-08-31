@@ -162,6 +162,7 @@ return [
         Cornford\Googlmapper\MapperServiceProvider::class,
         SKAgarwal\GoogleApi\ServiceProvider::class,
         Stevebauman\Location\LocationServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
     ],
 
     /*
@@ -214,6 +215,8 @@ return [
         'Mapper' => Cornford\Googlmapper\Facades\MapperFacade::class,
         'GooglePlaces' => SKAgarwal\GoogleApi\Facade::class,
         'Location' => Stevebauman\Location\Facades\Location::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];
