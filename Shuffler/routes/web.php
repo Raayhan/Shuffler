@@ -20,7 +20,12 @@ Auth::routes();
 
 
 Route::get('/places', 'PlacesController@index')->middleware('authenticated');
-Route::get('/dashboard', 'MapController@index')->middleware('authenticated');
+Route::get('/search', 'PlacesController@index')->middleware('authenticated');
+Route::get('/shuffle', 'PlacesController@index')->middleware('authenticated');
+Route::get('/all', 'PlacesController@index')->middleware('authenticated');
+Route::get('/recommended', 'PlacesController@index')->middleware('authenticated');
+
+// Route::get('/dashboard', 'MapController@index')->middleware('authenticated');
 
 Route::get('/redirect', 'Auth\LoginController@redirectToProvider');
 Route::get('/callback', 'Auth\LoginController@handleProviderCallback');

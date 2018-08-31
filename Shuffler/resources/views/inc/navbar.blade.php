@@ -1,12 +1,16 @@
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-     
+<nav class="navbar navbar-expand-md navbar-dark bg-dark" 
+style="position: fixed; margin: 0; padding: 0; 
+left: 0vw; width: 100vw; z-index:1; 
+display: flex; justify-content:center;">
+
     <div class="container">
+        <input type="image" src="{{ asset('shuffle.PNG') }}" style= "max-width: 40px; max-height: 40px">
         @guest
-            <a class="navbar-brand" href="{{ url('/') }}">
+            <a class="navbar-brand" style="" href="{{ url('/') }}">
                 {{ config('app.name', 'Shuffler') }}
             </a>
         @else
-            <a class="navbar-brand" href="{{ url('/places') }}">
+            <a class="navbar-brand" style="" href="{{ url('/places') }}">
                 {{ config('app.name', 'Shuffler') }}
             </a>
         @endguest
@@ -21,24 +25,23 @@
             </ul>
 
             <ul class="navbar-nav">
-                @guest
+                {{-- @guest
                 @else
                 <li class="nav-item">
-                <a class="nav-link" href="/places">Places <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/places">Places <span class="sr-only">(current)</span></a>
                 </li>
-                @endguest
-                <li class="nav-item">
-                <a class="nav-link" href="/about">About</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="/services">Services</a>
-                </li>
-                
-                </ul>
+                @endguest --}}
+            </ul>
 
               <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/services">Services</a>
+                </li>
                 @guest
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -67,7 +70,7 @@
                 @endguest
             </ul>
 
-          </div>
-      </div>
+        </div>
+    </div>
     
-  </nav>
+</nav>
