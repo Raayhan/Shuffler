@@ -88,6 +88,26 @@ class AllPlacesController extends Controller
     }
 
     /**
+     * Store places found.
+     * 
+     * @param array $places
+     * @return void
+     */
+    public function storePlaces($places){
+        foreach($places as $place){
+            if(Place::where('place_id', '=', $place['place_id'])->first()) continue;
+            $toStore = new Place;
+            $toStore->place_id = $place['place_id'];
+            $toStore->coordinates = $place['coordinates'];
+            $toStore->name = $place['name'];
+            $toStore->vicinity = $place['vicinity'];
+            $toStore->types = $place['types'];
+            $toStore->rating = $place['rating'];
+            $toStore->save();
+        }
+    }
+
+    /**
      * Store search parameter as well as result IDs.
      * 
      * @param string $location

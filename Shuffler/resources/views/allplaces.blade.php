@@ -10,6 +10,8 @@
             @if($type == '')All @else{{$type}} @endif</u></b>
         &nbsp; Radius - <b><u>{{$radius}}</u></b></p>
 
+        <p style="font-size:150%;">Found: {{count($places)}} places!</p>
+
         @if(count($places) > 1)
             @foreach($places as $place)
                 <div align='center' class="card text-white bg-dark mb-3" style="max-width: 25rem;">

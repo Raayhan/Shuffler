@@ -159,10 +159,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
-        Cornford\Googlmapper\MapperServiceProvider::class,
         SKAgarwal\GoogleApi\ServiceProvider::class,
         Stevebauman\Location\LocationServiceProvider::class,
-        Collective\Html\HtmlServiceProvider::class,
     ],
 
     /*
@@ -212,11 +210,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-        'Mapper' => Cornford\Googlmapper\Facades\MapperFacade::class,
         'GooglePlaces' => SKAgarwal\GoogleApi\Facade::class,
         'Location' => Stevebauman\Location\Facades\Location::class,
-        'Form' => Collective\Html\FormFacade::class,
-        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];

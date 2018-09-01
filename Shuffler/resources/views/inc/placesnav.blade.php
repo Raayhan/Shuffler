@@ -15,13 +15,9 @@
             <a style="display: block; color: white; text-align: center; 
             padding: 14px 16px; text-decoration: none;"
             href="/shuffle">Shuffle</a></li>
-        <li style="float: center; border-right:1px solid #bbb;">
-            <a style="display: block; color: white; text-align: center; 
-            padding: 14px 16px; text-decoration: none;"
-            href="/allplaces">All Places</a></li>
         <li style="float: center;">
             <a style="display: block; color: white; text-align: center; 
             padding: 14px 16px; text-decoration: none;"
-            href="/recommended">Recommended</a></li>
+            href="/allplaces">All Places</a></li>
     </ul>
 </div>

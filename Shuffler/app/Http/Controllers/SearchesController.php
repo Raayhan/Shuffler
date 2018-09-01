@@ -92,7 +92,7 @@ class SearchesController extends Controller
         $location = $this->location;
         $radius = $this->radius;
         $type = $this->type;
-        return redirect('/allplaces');
+        return redirect('/shuffle');
     }
 
     /**
@@ -146,12 +146,7 @@ class SearchesController extends Controller
             'veterinary_care',
             'zoo',
         ];
-        $results = array();
-        foreach($availableTypes as $availableType){
-            $result = str_replace('_', ' ', ucfirst($availableType));
-            array_push($results, $result);
-        }
-        return $results;
+        return $availableTypes;
     }
 
     /**
