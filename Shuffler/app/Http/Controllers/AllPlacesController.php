@@ -14,7 +14,8 @@ use Location;
 
 class AllPlacesController extends Controller
 {
-    private $title = 'Searches';
+    private $title = 'All Places';
+
     /**
      * Display a listing of the resource.
      *

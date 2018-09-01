@@ -19,13 +19,12 @@ Auth::routes();
 
 Route::get('/places', 'PlacesController@index')->middleware('authenticated');
 
-Route::get('/shuffle', 'PlacesController@index')->middleware('authenticated');
-Route::get('/recommended', 'PlacesController@index')->middleware('authenticated');
 
 Route::get('/search', 'SearchesController@index')->middleware('authenticated');
 Route::post("search", 'SearchesController@store')->middleware('authenticated');
-
 Route::get('/allplaces', 'AllPlacesController@index')->middleware('authenticated');
+Route::get('/shuffle', 'ShuffleController@index')->middleware('authenticated');
+Route::get('/recommended', 'AllPlacesController@index')->middleware('authenticated');
 
 
 // Route::get('/dashboard', 'MapController@index')->middleware('authenticated');

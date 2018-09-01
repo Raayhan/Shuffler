@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ShuffleController extends Controller
+class ShuffleController extends AllPlacesController
 {
+    private $title = 'Shuffle';
+
     /**
      * Display a listing of the resource.
      *
@@ -14,71 +16,48 @@ class ShuffleController extends Controller
     public function index()
     {
         //
+        $title = $this->title;
+        if(parent::findLastSearch()){
+            $searched = parent::findLastSearch();
+            $location = $searched->location;
+            $type = $searched->type;
+            $radius = $searched->radius;
+        }
+        else{
+            $location = parent::getUserLocation();
+            $type = '';
+            $radius = 500;
+        }
+        $places = parent::findPlaces($location, $radius, $type);
+        $places = $this->shufflePlaces($places);
+        return view('shuffle', compact([
+            $title => 'title', $location => 'location',
+            $type => 'type', $radius => 'radius',]))
+            ->with('places', $places);
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Shuffle a list of places.
      *
-     * @return \Illuminate\Http\Response
+     * @return GooglePlaces
      */
-    public function create()
+    public function shufflePlaces($places)
     {
-        //
+        // if (!is_array($places)) return $places; 
+        
+        // $keys = array_keys($places); 
+        // shuffle($keys); 
+        // $random = array(); 
+        // foreach ($keys as $key) { 
+        //     $random[$key] = $places[$key]; 
+        // }
+        // return $random; 
+
+        $keys = $places->keys()->toArray();
+        $key = array_rand($keys);
+
+        return $places[$key];
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
