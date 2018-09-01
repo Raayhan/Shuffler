@@ -117,14 +117,25 @@ class AllPlacesController extends Controller
      * @return GooglePlaces
      */
     public function storeHistory($location, $radius, $type, $places){
-        foreach($places as $place){
+        if(empty($places)){
             $toStore = new History;
             $toStore->location = $location;
             $toStore->radius = $radius;
             $toStore->type = $type;
             $toStore->user_id = Auth::user()->id;
-            $toStore->place_id = $place['place_id'];
+            $toStore->place_id = NULL;
             $toStore->save();
+        }
+        else{
+            foreach($places as $place){
+                $toStore = new History;
+                $toStore->location = $location;
+                $toStore->radius = $radius;
+                $toStore->type = $type;
+                $toStore->user_id = Auth::user()->id;
+                $toStore->place_id = $place['place_id'];
+                $toStore->save();
+            }
         }
     }
 

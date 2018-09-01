@@ -19,14 +19,13 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body style="background-image:url('Background.PNG')">
+<body style="background-image:url('Background.PNG'); font-family: verdana">
     <div id="app">
         @include('inc.navbar')
         <div class="container">
            <br><br>
             @yield('content')
         </div>
-       
     </div>
  <!-- Scripts -->
  <script src="{{ asset('js/app.js') }}"></script>

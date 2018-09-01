@@ -54,9 +54,13 @@ class ShuffleController extends AllPlacesController
         // return $random; 
 
         $keys = $places->keys()->toArray();
+        if(empty($keys)){
+            return null;
+        }
         $key = array_rand($keys);
-
         return $places[$key];
+        
+
     }
 
 

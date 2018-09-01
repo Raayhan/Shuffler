@@ -16,19 +16,24 @@
             z-index:1; float: center; justify-content:center;">
         </form>
 
-        <div align='center' class="card text-white bg-dark mb-3" style="max-width: 25rem;">
-            <div class="card-header">Place ID: <b>{{$places['place_id']}}</b></div>
-            <div class="card-body">
-                <h1 class="card-title">{{$places['name']}}</h1>
-                Type: <b>
-                    @foreach(explode(';', $places['types']) as $type)
-                        <u>{{$type}}</u>
-                    @endforeach</b><br>
-                        
-                Rating: <b>{{$places['rating']}}</b><br>
+        @if(isset($places))
+            <div align='center' class="card text-white bg-dark mb-3" style="max-width: 25rem;">
+                <div class="card-header">Place ID: <b>{{$places['place_id']}}</b></div>
+                <div class="card-body">
+                    <h1 class="card-title">{{$places['name']}}</h1>
+                    Type: <b>
+                        @foreach(explode(';', $places['types']) as $type)
+                            <u>{{$type}}</u>
+                        @endforeach</b><br>
+                            
+                    Rating: <b>{{$places['rating']}}</b><br>
+                </div>
+                <h6 class="card-footer">Address: {{$places['vicinity']}}</h6>
             </div>
-            <h6 class="card-footer">Address: {{$places['vicinity']}}</h6>
-        </div>
+        @else
+            <p>No places found.</p>
+        @endif
+
 
 
 

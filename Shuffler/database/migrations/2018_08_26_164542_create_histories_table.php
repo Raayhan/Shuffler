@@ -20,7 +20,7 @@ class CreateHistoriesTable extends Migration
             $table->string('type')->nullable();
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->string('place_id');
+            $table->string('place_id')->nullable()->default(NULL);
             $table->timestamps();
         });
     }

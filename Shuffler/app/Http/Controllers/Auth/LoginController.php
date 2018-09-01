@@ -83,7 +83,7 @@ public function redirectToProvider()
                 $user->save();
                 Auth::loginUsingId($user->id);
             }
-            return redirect()->to('/dashboard');
+            return redirect()->to('/search');
         } 
         catch (Exception $e) {
             return 'error';
