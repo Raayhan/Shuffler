@@ -1,32 +1,25 @@
-# README #
+# SHUFFLER #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+shuffler is a location based web app for discovering different places nearby users.
 
-### What is this repository for? ###
+Language : PHP
+Framework : Laravel 5.6
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
-### How do I get set up? ###
+### How do  get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+Server : Xampp
+Editor : Visual Studio Code
+Database : MySQL Server ( PHP MY Admin)
 
-### Contribution guidelines ###
 
-* Writing tests
-* Code review
-* Other guidelines
+
+
 
 ### Who do I talk to? ###
 
-* Repo owner or admin
-* Other community or team contact
+Admin : Rayhan Ahmed Rakib
+Email : rayhan.rakib@northsouth.edu
 
 ### Project Name ###
 
